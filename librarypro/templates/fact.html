@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<h2>factorial of number</h2>
+<form method="POST">
+    {% csrf_token %}}
+<center>
+<div class="mb-3">
+  <label  class="form-label">number</label>
+    <input type="number" class="form-control" name="n" placeholder="enter the number">
+</div>
+
+<div class="mb-3">
+
+   <input type="submit" class="form-control btn btn-secondary">
+</div>
+</form>
+{% fact %}
+<h3>factorial is {{fact}}</h3>
+{% endif %}
+  </center>
+{% endblock %}

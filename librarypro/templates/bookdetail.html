@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<h2>books details</h2>
+<table class="table table-bordered">
+      <tr>
+            <th>id</th>
+            <td>{{b.title}}</td>
+      </tr>
+      <tr>
+            <th>title</th>
+            <td>{{b.title}}</td>
+      </tr>
+      <tr>
+            <th>author</th>
+            <td>{{b.author}}</td>
+      </tr>
+      <tr>
+            <th>price</th>
+            <td>{{b.price}}</td>
+      </tr>
+      <tr>
+            <th>document</th>
+            <td><a href="{{b.pdf.url}}">download</a></td>
+      </tr>
+      <tr>
+            <th>cover</th>
+            <td><img src="{{b.cover.url}}" height="100px" width="100px"></td>
+      </tr>
+</table>
+
+      </center>
+
+
+{% endblock %}

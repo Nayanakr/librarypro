@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<h2>view books</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>author</th>
+        <th>price</th>
+        <th>document</th>
+        <th>cover</th>
+        <th>view</th>
+        <th>edit</th>
+        <th>delete</th>
+    </tr>
+    {% for i in b%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.price}}</td>
+        <td><a href="{{i.pdf.url}}">download</a></td>
+        <td><img src="{{i.cover.url}}" height="100px" width="100px"</td>
+        <td><a href="{% url 'books:detail' i.id %}" class="btn btn-danger">view</a></td>
+        <td><a href="{% url 'books:edit' i.id %}" class="btn btn-danger">edit</a></td>
+        <td><a href="{% url 'books:delete' i.id %}" class="btn btn-danger">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<!--<ol>-->
+<!--    {% for i in b %}-->
+<!--    <li>book details</li>-->
+<!--    <ul>-->
+<!--        <li>title:{{i.title}}</li>-->
+<!--        <li>author:{{i.author}}</li>-->
+<!--        <li>price:{{i.price}}</li>-->
+<!--    </ul>-->
+<!--    {% endfor %}-->
+
+{% endblock %}
